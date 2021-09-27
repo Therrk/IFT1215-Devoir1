@@ -142,7 +142,7 @@
 \section{Format des Données Numériques}
 
 \begin{problem}{2a)}
-\textbf{[6 pts]} Représenter les nombres -1710 et 1710 selon les 3 conventions:
+\textbf{[6 pts]} Représenter les nombres -17 et 17 selon les 3 conventions:
     \begin{itemize}
         \item Valeur Signée sur 8 bits
         \item DCB (décimal codé binaire) sur 16 bits
@@ -152,14 +152,19 @@
 
 \begin{solution}
     \begin{tabular}{c|c}
+        $-17$ & $17$\\
+        \hline
+        $-17+2^4 = -1$ & $17-2^4 = 1$\\
+        $-1+2^0=0$&$1-2^0=0$\\
+        $10010001$&$00010001$
+    \end{tabular}
+    \\
+    \begin{tabular}[20pt]{c|c}
         $-1710$ & $1710$\\
         \hline
-        $-1710+2^{10} = -686$ & $1710-2^{10}=686$\\
-        $-686+2^9=-174$ & $686-2^9=174$\\
-        $-174+2^7=-36$ & $174-2^7=36$\\
-        $-36+2^5=-4$ & $36-2^5=4$\\
-        $-4+2^2=0$ & $4-2^2=0$\\
-        impossible, trop de bits?
+        1 \hspace{12pt} 7 \hspace{12pt}&1 \hspace{12pt} 7\\
+        $0001$ $0101$ &$0001$ $0101$\\
+        $110100010101$& $101100000010101$
     \end{tabular}
 \end{solution}
 
