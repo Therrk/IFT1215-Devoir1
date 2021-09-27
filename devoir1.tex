@@ -64,7 +64,7 @@
     $133-2^7=5$ & Hexadécimal & Octal & Quaternaire\\
     $5-2^2 = 1$ & 1000 0101 & 010 000 101 & 10 00 01 01\\
     $1-2^0 = 0$ & 8 \hspace{14pt} 5 & 2 \hspace{6pt} 0 \hspace{6pt} 5 & 2 \hspace{4pt}0 \hspace{4pt}1 \hspace{4pt}1\\
-    $133_{10} = 10000101_2$ & $85_{16}$ & $205_8$ & $2011_4$
+    $133_{10} = 1000 0101_2$ & $85_{16}$ & $205_8$ & $2011_4$
     \end{tabular}
 \end{solution}
 
@@ -87,13 +87,17 @@
          & \Large $10011001001_2$
     \end{tabular}
     \\
-    \begin{tabular}{c|c|c|c|c|c}
-        \multicolumn{3}{c}{\large $11001_2$} & \multicolumn{3}{c}{\large $110001_2$}\\
-        Hexadécimal & octal & Quaternaire & Hexadécimal & Octal & Quaternaire\\
+
+    \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        0001 1001 & 011 001 & 01 10 01 & 0011 0001 & 110 001 & 11 00 01\\
-        1\hspace{15pt} 9 & 3\hspace{10pt} 1 & 1 \hspace{5pt}2\hspace{5pt} 1 & 4\hspace{15pt} 1 & 6\hspace{10pt} 1 & 4\hspace{5pt} 0\hspace{5pt} 1\\
-        $19_{16}$ & $31_8$ & $121_4$ & $41_{16}$ & $61_8$ & $401_2$
+        \multicolumn{3}{|c|}{\large $11001_2$} & \multicolumn{3}{|c|}{\large $110001_2$}\\
+        \hline
+        Décimal & Octal & Hexadécimal & Décimal & Octal & Hexadécimal\\
+        \hline
+        00011001 & 011 001 & 0001 1001 & 00110001 & 110 001 & 0011 0001\\
+        16+8+1& 3\hspace{10pt} 1 & 1 \hspace{5pt}9 & 32+16+1 & 6\hspace{10pt} 1 & 3\hspace{5pt} 1\\
+        $25_{10}$ & $31_8$ & $19_{16}$ & $49_{10}$ & $61_8$ & $31_{16}$\\
+        \hline
     \end{tabular}
 \end{solution}
 
@@ -116,6 +120,17 @@
 \textbf{[5pts]} Convertir les nombres $101.101_2$ et $10101.10001_2$ en octal et décimal. Pour la conversion en décimal, donnez votre réponse en forme de somme des puissances de 2.
 \end{problem}
 \begin{solution}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{\large $101.101_2$} & \multicolumn{2}{|c|}{\large $10101.10001_2$}\\
+        \hline
+        Octal & Décimal & Octal & Décimal\\
+        \hline
+        101 . 101 & $101.101_2$ & 010 101 . 100 010 & 10101.10001 \\
+        5  .  5 & $2^2+2^0+2^{-1}+2^{-3}$ & 2 \hspace{12pt}5 . 4\hspace{12pt}2 & $2^4+2^2+2^0+2^{-1}+2^{-5}$  \\
+        $5.5_8$&$5.625_{10}$&$25.42_8$&$21.53125_{10}$\\
+        \hline
+    \end{tabular}
 \end{solution}
 
 \begin{problem}{1f)}
@@ -146,14 +161,6 @@
         $-4+2^2=0$ & $4-2^2=0$\\
         impossible, trop de bits?
     \end{tabular}
-    \\
-    \begin{tabular}[20pt]{c|c}
-        $-1710$ & $1710$\\
-        \hline
-        1 \hspace{12pt} 7 \hspace{12pt} 1 \hspace{12pt} 0&1 \hspace{12pt} 7 \hspace{12pt} 1 \hspace{12pt} 0\\
-        $0001$ $0101$ $0001$ $0000$ &$0001$ $0101$ $0001$ $0000$ \\
-        $$&$00101010001000$
-    \end{tabular}
 \end{solution}
 
 \newpage
@@ -169,6 +176,15 @@ celles pour lesquelles apparaît un débordement ou (et) une retenue(Carry).
     \end{itemize}
 \end{problem}
 \begin{solution}
+    
+
+
+
+
+
+
+
+
 \end{solution}
 
 \begin{problem}{2c)}
