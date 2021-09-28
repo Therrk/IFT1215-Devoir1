@@ -74,7 +74,7 @@
 \begin{solution}
     \begin{tabular}{r|r}
         \large Addition & \large multiplication\\
-        \hline\\
+        \hline \\ 
         \huge $1^11000^11_2$  & \huge $110001_2$\\
         + \huge $11001_2$       & \huge $\times 11001_2$\\
         \rule{1in}{2pt}         & \rule{1in}{2pt}\\
@@ -134,9 +134,53 @@
 \end{solution}
 
 \begin{problem}{1f)}
-\textbf{[5 pts]} Convertir les nombres $11.625_{10}$ et $1/11_{10}$ en binaire. Si les fractions sont infinies et ne sont pas périodiques, cherchez les 6 chiffres après la virgule
+    \textbf{[5 pts]} Convertir les nombres $11.625_{10}$ et $1/11_{10}$ en binaire. Si les fractions sont infinies et ne sont pas périodiques, cherchez les 6 chiffres après la virgule
 \end{problem}
 \begin{solution}
+    \begin{tabular}{|c|c|}
+        \hline
+        $11.625_{10}$               &  \\
+        $-8_{10}$                   & $2^3$ \\
+        \hline          
+        $=3.625_{10}$               &  \\
+        $-2_{10}$                   & $2^1$ \\
+        \hline          
+        $=1.625_{10}$               &  \\
+        $-1_{10}$                   & $2^0$ \\
+        \hline          
+        $=0.625_{10}$               &  \\
+        $-0.5_{10}$                 & $2^{-1}$ \\
+        \hline          
+        $=0.125_{10}$               &  \\
+        $-0.125_{10}$               & $2^{-3}$ \\
+        \hline          
+        =0                          & $1011.101_2$\\
+        \hline
+    \end{tabular}
+    \\\\\\\\
+    \begin{tabular}{|c|c|}
+        \hline
+        $1/11_{10}$                 & \\
+        $-0.5$                      & $2^{-1}$ \\
+        \hline
+        $=0.4090909090\dots_{10}$   & \\
+        $-0.25_{10}$                & $2^{-2}$ \\
+        \hline
+        $=0.1590909090\dots_{10}$   & \\
+        $-0.125_{10}$               & $2^{-3}$ \\
+        \hline
+        $=0.0340909090\dots_{10}$   & \\
+        $-0.3125_{10}$              & $2^{-5}$ \\
+        \hline
+        $=0.0028409090\dots_{10}$   & \\
+        $-0.001953125{10}$          & $2^{-9}$ \\
+        \hline
+        $=0.0008877840\dots_{10}$   & $=0.111010001\dots_2$ \\
+        \hline
+                                    & $\approx0.111010_2$ \\
+        \hline
+
+    \end{tabular}
 \end{solution}
 
 \section{Format des Données Numériques}
