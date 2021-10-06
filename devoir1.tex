@@ -279,58 +279,97 @@ celles pour lesquelles apparaît un débordement ou (et) une retenue(Carry).
 \end{problem}
 
 \begin{solution}
-    Avec le programme que j'ai codé en python ci dessous, on peux calculer la mantisse d'un nombre facilement:
-    \begin{lstlisting}
-        import math
-        n = 8/11      # le nombre dont on veux trouver la mantisse
-        power = 5       # la puissance avec laqelle on commense a comparer
-        binary = ''     # la representation binaire de n
-        mantisse = ''   # mantisse de n dans une representation en point flotante
+    Pour la representation flotante de $-14.625_{10}$, on peux calculer sa representation binaire:\\
+    \begin{tabular}{|c|c|}
+        \hline
+        14.625 \\
+        -8 & $2^3$\\
+        \hline
+        =6.625 \\
+        -4 & $2^2$\\ 
+        \hline
+        =2.625 \\ 
+        -2 & $2^1$\\
+        \hline
+        =0.625\\ 
+        -0.5 & $2^{-1}$\\ 
+        \hline
+        =0.125\\ 
+        -0.125 & $2^{-3}$\\ 
+        \hline
+        =0\\ 
+        \hline
+    \end{tabular}
+    Ce qui nous donne un representation binaire de $-1110.101_2$\\
 
-        # 23 a cause des 23 bits de la mantisse -
-        # le 1 qui est sousentendu dans la convention +
-        # la puissance du premier chiffre significatif de n
-        final_power = -23 -1 + math.floor(math.log2(n))
+    On sait que le signe est negatif, l'exponent doit etre egale a 3 et la mantisse commence par 1101010000\dots\\
 
-        # on trouve les bits un a un
-        while power > final_power:
-            if 2 ** power <= n:
-                n -= 2 ** power
-                binary += '1'
-            else:
-                binary += '0'
-            # ajouter un point decimal avant 
-            # de passer aux puissances negatives
-            if power == 0:
-                binary += '.'
-            power -= 1
+    exp = 3 = -127+128+2 = $10000010_2$
 
-        # la mantisse est les 23 derniers chiffres de la representation binaire
-        mantisse = binary.replace('.', '')[-23:]
-        print(f"La representation binaire de {n}: " + binary)
-        print(f"La mantisse de la representation flotante de {n}: " + mantisse)
-    \end{lstlisting}
-    Le programme nous donne le resultat suivant:
-    \begin{lstlisting}
-        La representation binaire de n: 000000.101110100010111010001011
-        La mantisse de la representation flotante de n: 01110100010111010001011
-    \end{lstlisting}
-    L'exponent doit alors etre $-1_{10}$ \\
-    Qui est egale a -127 + 64 + 32 + 16 + 8 ou $01111110_2$ \\
-    Et le nombre a representer est positif
-    Alors la representation flotante de 8/11 est: \\
-    $0\ 01111110\ 01110100010111010001011_2$\\
-    De la meme facon, on peux calculer la representation flotante de $-14.625_{10}$ \\
-    Le programme nous donne le resultat suivant:
-    \begin{lstlisting}
-        La representation binaire de n: 001110.10100000000000000000
-        La mantisse de la representation flotante de n: 11010100000000000000000
-    \end{lstlisting}
-    L'exponent doit alors etre $3_{10}$ \\
-    Qui est egale a -127 + 128 + 2 ou $10000010_2$ \\
-    Et le nombre a representer est positif \\
-    Alors la representation flotante de -14.625 est: \\
-    $1\ 10000010\ 11010100000000000000000_2$
+    Donc la representation flotante IEEE-754 est: \\
+    $1\ 10000010\ 11010100000000000000000_2$ \\\\\\
+
+    Pour la representation flotante de $8/11_{10}$, on peux calculer sa representation binaire:\\
+    $8/11_{10} == 0.727272727272727272\dots_{10}$
+
+    \begin{tabular}{|c|c|}
+        \hline
+        0.7272727272727273\dots \\
+        -0.5 & $2^{-1}$\\
+        \hline
+        =0.2272727272727273\dots \\
+        -0.125 & $2^{-3}$\\
+        \hline
+        =0.10227272727272729\dots \\
+        -0.0625 & $2^{-4}$\\
+        \hline
+        =0.03977272727272729\dots \\
+        -0.03125 & $2^{-5}$\\
+        \hline
+        =0.008522727272727293\dots \\
+        -0.0078125 & $2^{-7}$\\
+        \hline
+        =0.0007102272727272929\dots \\
+        -0.00048828125 & $2^{-11}$\\
+        \hline
+        =0.0002219460227272929\dots \\
+        -0.0001220703125 & $2^{-13}$\\
+        \hline
+        =9.987571022729291e-05\dots \\
+        -6.103515625e-05 & $2^{-14}$\\
+        \hline
+        =3.884055397729291e-05\dots \\
+        -3.0517578125e-05 & $2^{-15}$\\
+        \hline
+        =8.322975852292913e-06\dots \\
+        -7.62939453125e-06 & $2^{-17}$\\
+        \hline
+        =6.935813210429131e-07\dots \\
+        -4.76837158203125e-07 & $2^{-21}$\\
+        \hline
+        =2.1674416283978815e-07\dots \\
+        -1.1920928955078125e-07 & $2^{-23}$\\
+        \hline
+        =9.75348732890069e-08\dots \\
+        -5.960464477539063e-08 & $2^{-24}$\\
+        \hline
+        =3.793022851361627e-08\dots \\
+        -2.9802322387695312e-08 & $2^{-25}$\\
+        \hline
+        =8.127906125920958e-09\dots \\
+        -7.450580596923828e-09 & $2^{-27}$\\
+        \hline
+        =0 & \\
+        \hline
+    \end{tabular}
+    Ce qui nous donne un representation binaire de $0.101110100010111010001011101_2$\\
+
+    On sait que le signe est positif, l'exponent doit etre egale a -1 et la mantisse est 01110100010111010001011\\
+
+    exp = -1 = -127+64+32+16+8+4+2 = $01111110_2$
+
+    Donc la representation flotante IEEE-754 est: \\
+    $0\ 01111110\ 01110100010111010001011_2$ 
 \end{solution}
 
 
