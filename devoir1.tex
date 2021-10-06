@@ -56,7 +56,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Fill in the appropriate information below
-\lhead{Votre Nom: }
+\lhead{Votre Nom: Élie Leblanc, Alban Guyon, Mathis Morra Fischer}
 \rhead{IFT 1215} 
 \chead{\textbf{Remise Devoir 1: 8 octobre 2021 }}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -72,11 +72,15 @@
 \begin{solution}
     \begin{tabular}{c|c}
         Soustractions successives & Divisions successives\\
-        $133 - 2\times(7^2) = 35$ & \\
-        $35 - 5\times(7^1) = 0$ & \\
-        $0 - 0\times(7^0) = 0$ & \\
-        $133_{10} = 2\times(7^2) + 5\times(7^1) + 0\times(7^0)$ & \\
-        $133_{10} = 250_7$ & 
+        $133 - 2\times(7^2) = 35$ & $133 = (66\times2)+1$\\
+        $35 - 5\times(7^1) = 0$ & $66 = (33\times2)+0$\\
+        $0 - 0\times(7^0) = 0$ & $33 = (16\times2) +1$\\
+        $133_{10} = 2\times(7^2) + 5\times(7^1) + 0\times(7^0)$ & $16 = (8\times2) +0$\\
+        $133_{10} = 250_7$ & $8 = (4\times2) +0$\\
+        & $4=(2\times2)+0$\\
+        & $2 = (1\times2)+0$\\
+        & $1= (0\times2) +1$\\
+        & $133_10 = 10000101_2$ 
     \end{tabular}
 \end{solution}
 
@@ -100,7 +104,7 @@
         \large Addition & \large multiplication\\
         \hline \\ 
         \huge $1^11000^11_2$  & \huge $110001_2$\\
-        + \huge $11001_2$       & \huge $\times 11001_2$\\
+        \huge $+ 11001_2$       & \huge $\times 11001_2$\\
         \rule{1in}{2pt}         & \rule{1in}{2pt}\\
         \huge $1001010_2$       &  \Large $1^110001_2$\\
          & \Large $0000000_2$ \hspace{6pt}\\
@@ -124,7 +128,7 @@
         \hline
     \end{tabular}
 \end{solution}
-
+\newpage
 \begin{problem}{1d)}
 \textbf{[4 pts]} Convertir $DAB_{16}$ en décimal et octal.
 \end{problem}
@@ -207,6 +211,8 @@
     \end{tabular}
 \end{solution}
 
+\newpage
+
 \section{Format des Données Numériques}
 
 \begin{problem}{2a)}
@@ -223,20 +229,28 @@
         $-17$ & $17$\\
         \hline
         $-17+2^4 = -1$ & $17-2^4 = 1$\\
-        $-1+2^0=0$&$1-2^0=0$\\
-        $10010001$&$00010001$
+        $-1+2^0=0$ & $1-2^0=0$\\
+        $10010001_2$ & $00010001_2$
     \end{tabular}
     \\
     \begin{tabular}[20pt]{c|c}
         $-17$ & $17$\\
         \hline
         nég \hspace{12pt}0 \hspace{12pt}1 \hspace{12pt} 7 \hspace{12pt}&pos \hspace{12pt}0 \hspace{12pt}1 \hspace{12pt} 7\\
-        $1101$ $0000$ $0001$ $0101$ &$1011$ $0000$ $0001$ $0101$\\
-        $110100010101$& $101100000010101$
+        $1101$ $0000$ $0001$ $0111_2$ &$1011$ $0000$ $0001$ $0111_2$\\
+        $110100010111_2$& $101100000010111_2$
+    \end{tabular}
+    \newline
+    \begin{tabular}{c|c}
+        $-17$ & $17$\\
+        \hline
+        $11111111_2 - 00010001_2$ & $00010001_2$\\
+        $11101110_2 + 1_2$ & La représentation en complément à deux est pareille à la \\
+        $11101111_2$ &  représentation à valeur signée pour les nombres positifs
     \end{tabular}
 \end{solution}
 
-\newpage
+
 \begin{problem}{2b)}
 \textbf{[10 pts]} Calculez les expressions suivantes exprimées en complément à deux en indiquant
 celles pour lesquelles apparaît un débordement ou (et) une retenue(Carry).
