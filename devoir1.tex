@@ -384,6 +384,34 @@ suivantes. L’encodage utilisé est le format IEEE-754 simple précision.
 \end{problem}
 
 \begin{solution}
+    \\
+    \textbf{A23BB000} = $1010 0010 0011 1011 1011 0000 0000 0000_2$ \\
+    sign = 1 \\
+    exponent = 01000100 \\
+    mantisse = 01110111011000000000000 \\
+    \\
+    exponent = $-127 + 64 + 4 = -59_{10}$ \\
+    \
+    valeur = $- 01110111011000000000000_2 * 2^{-59}$
+    \\\\
+    \textbf{33DD1000} = $0011 0011 1101 1101 0001 0000 0000 0000_2$ \\
+    sign = 0 \\
+    exponent = 01100111 \\
+    mantisse = 10111010001000000000000 \\
+    \\
+    exponent = $-127 + 64 + 32 + 4 + 2 + 1 = -24_{10}$ \\
+    \
+    valeur = $+ 10111010001000000000000_2 * 2^{-24}$
+    \\\\
+    \textbf{FF200000} = $1111 1111 0010 0000 0000 0000 0000 0000_2$ \\
+    sign = 1 \\
+    exponent = 11111110 \\
+    mantisse = 01000000000000000000000 \\
+    \\
+    exponent = $-127 + + 128 + 64 + 32 + 16 + 8 + 4 + 2 = 127_{10}$ \\
+    mantisse = $2^{-2} = 0.25_{10}$ \\
+    \
+    valeur = $- 1.25_{10} * 2^{127}$
 \end{solution}
-\end{document}
 
+\end{document}
