@@ -6,6 +6,30 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage{indentfirst}
 \usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -241,6 +265,58 @@ celles pour lesquelles apparaît un débordement ou (et) une retenue(Carry).
 \end{problem}
 
 \begin{solution}
+    Avec le programme que j'ai codé en python ci dessous, on peux calculer la mantisse d'un nombre facilement:
+    \begin{lstlisting}
+        import math
+        n = 8/11      # le nombre dont on veux trouver la mantisse
+        power = 5       # la puissance avec laqelle on commense a comparer
+        binary = ''     # la representation binaire de n
+        mantisse = ''   # mantisse de n dans une representation en point flotante
+
+        # 23 a cause des 23 bits de la mantisse -
+        # le 1 qui est sousentendu dans la convention +
+        # la puissance du premier chiffre significatif de n
+        final_power = -23 -1 + math.floor(math.log2(n))
+
+        # on trouve les bits un a un
+        while power > final_power:
+            if 2 ** power <= n:
+                n -= 2 ** power
+                binary += '1'
+            else:
+                binary += '0'
+            # ajouter un point decimal avant 
+            # de passer aux puissances negatives
+            if power == 0:
+                binary += '.'
+            power -= 1
+
+        # la mantisse est les 23 derniers chiffres de la representation binaire
+        mantisse = binary.replace('.', '')[-23:]
+        print(f"La representation binaire de {n}: " + binary)
+        print(f"La mantisse de la representation flotante de {n}: " + mantisse)
+    \end{lstlisting}
+    Le programme nous donne le resultat suivant:
+    \begin{lstlisting}
+        La representation binaire de n: 000000.101110100010111010001011
+        La mantisse de la representation flotante de n: 01110100010111010001011
+    \end{lstlisting}
+    L'exponent doit alors etre $-1_{10}$ \\
+    Qui est egale a -127 + 64 + 32 + 16 + 8 ou $01111110_2$ \\
+    Et le nombre a representer est positif
+    Alors la representation flotante de 8/11 est: \\
+    $0\ 01111110\ 01110100010111010001011_2$\\
+    De la meme facon, on peux calculer la representation flotante de $-14.625_{10}$ \\
+    Le programme nous donne le resultat suivant:
+    \begin{lstlisting}
+        La representation binaire de n: 001110.10100000000000000000
+        La mantisse de la representation flotante de n: 11010100000000000000000
+    \end{lstlisting}
+    L'exponent doit alors etre $3_{10}$ \\
+    Qui est egale a -127 + 128 + 2 ou $10000010_2$ \\
+    Et le nombre a representer est positif \\
+    Alors la representation flotante de -14.625 est: \\
+    $1\ 10000010\ 11010100000000000000000_2$
 \end{solution}
 
 
