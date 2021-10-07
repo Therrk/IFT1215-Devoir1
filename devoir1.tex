@@ -245,14 +245,244 @@ celles pour lesquelles apparaît un débordement ou (et) une retenue(Carry).
     \end{itemize}
 \end{problem}
 \begin{solution}
-    
-
-
-
-
-
-
-
+    \begin{itemize}
+        \item
+        
+        
+        \begin{tabular}{|c|c|}
+        \hline
+         & Nombre positif\\
+        \hline    
+        1101 1011           &       0010 0100                   \\
+        \hspace{101pt}      &       + \hspace{25pt} 1           \\
+        = $-37_{10}$        &       \rule{1in}{1pt}             \\
+        \hspace{5pt}        &       0010 0101                   \\
+        \hspace{5pt}        &       32 + 4 + 1 = $37_{10}$      \\
+                            &       \hspace{100pt}              \\
+        \hline
+        \end{tabular}
+        
+        \hspace{40pt}
+        
+        \begin{tabular}{|c|c|}
+        \hline
+        & Nombre négatif\\
+        \hline    
+        0100 1011                   &       1011 0100           \\
+                                    &       + \hspace{25pt} 1   \\
+        64 + 8 + 2 + 1 = $75_{10}$  &       \rule{1in}{1pt}     \\
+        \hspace{5pt}                &       1011 0101           \\
+        \hspace{100pt}              &       \hspace{100pt}      \\
+                                    &       = $-75_{10}$        \\
+        \hline
+        \end{tabular}
+        
+        \hspace{40pt}
+        
+        \begin{tabular}{|c|c|c|}
+        \hline
+        & Nombre positif & Résultat \\
+        \hline
+        \hspace{6pt}1101 1011       &       0110 1111                   &       -37 + (-75) = $-112_{10}$         \\
+        +1011 0101                  &       + \hspace{25pt} 1           &                                         \\
+        \rule{1in}{1pt}             &       \rule{1in}{1pt}             &       Correcte                          \\
+        (1)1001 0000                &       0111 0000                   &                                         \\
+        \hspace{33pt} = $-112_{10}$ \hspace{20pt}  &       64 + 32 + 16 = 112   &                                   \\
+        Carry                       &       \hspace{100pt}              &      \hspace{100pt}                     \\
+        \hline
+        \end{tabular}
+        
+        \item
+        
+        
+        \begin{tabular}{|c|c|}
+        \hline
+         & Nombre positif\\
+        \hline    
+        1001                &       0110                        \\
+        \hspace{101pt}      &       + \hspace{5pt} 1           \\
+        = $-7_{10}$          &       \rule{1in}{1pt}             \\
+        \hspace{5pt}        &       0111                        \\
+        \hspace{5pt}        &       4 + 2 + 1 = $7_{10}$        \\
+                            &       \hspace{100pt}              \\
+        \hline
+        \end{tabular}
+        
+        \hspace{40pt}
+        
+        \begin{tabular}{|c|c|}
+        \hline
+        & Nombre négatif\\
+        \hline    
+        0011                        &       1100                \\
+                                    &       + \hspace{5pt} 1   \\
+        2 + 1 = $3_{10}$            &       \rule{1in}{1pt}     \\
+        \hspace{5pt}                &       1101                \\
+        \hspace{100pt}              &       \hspace{100pt}      \\
+                                    &       = $-3_{10}$          \\
+        \hline
+        \end{tabular}
+        
+        \hspace{40pt}
+        
+        \begin{tabular}{|c|c|c|}
+        \hline
+        &  & Résultat \\
+        \hline
+        \hspace{6pt}1001       &                         &       -7 + (-3) = $-10_{10}$         \\
+        +1101                  &               &                                         \\
+        \rule{1in}{1pt}             &                  &       Incorrecte                          \\
+        (1)0110                &                        &                                         \\
+        \hspace{33pt}  = $6_{10}$ \hspace{38pt}  &          &                                   \\
+        Carry et Overflow                       &       \hspace{100pt}              &      \hspace{100pt}   \\
+        \hline
+        \end{tabular}
+        
+        
+        \item
+        
+        
+        \begin{tabular}{|c|c|}
+        \hline
+        & Nombre positif\\
+        \hline    
+        1110 1011           &       0001 0100                   \\
+        \hspace{101pt}      &       + \hspace{25pt} 1           \\
+        = $-21_{10}$        &       \rule{1in}{1pt}             \\
+        \hspace{5pt}        &       0001 0101                   \\
+        \hspace{5pt}        &       16 + 4 + 1 = $21_{10}$      \\
+                            &       \hspace{100pt}              \\
+        \hline
+        \end{tabular}
+        
+        \hspace{40pt}
+        
+        \begin{tabular}{|c|c|}
+        \hline
+        & Nombre positif\\
+        \hline    
+        1101 1011                   &       0010 0100           \\
+                                    &       + \hspace{25pt} 1   \\
+        = $-37_{10}$  &       \rule{1in}{1pt}     \\
+        \hspace{5pt}                &       0010 0101           \\
+        \hspace{100pt}              &       \hspace{100pt}      \\
+                                    &       32 + 4 + 1= $37_{10}$\\
+        \hline
+        \end{tabular}
+        
+        \hspace{40pt}
+        
+        \begin{tabular}{|c|c|c|}
+        \hline
+        &  & Résultat \\
+        \hline
+        \hspace{6pt}1110 1011       &                          &       -21 - (-37) = $16_{10}$         \\
+        +0010 0101                  &        \hspace{25pt}            &                                         \\
+        \rule{1in}{1pt}             &                  &       Correcte                          \\
+        (1)0001 0000                &                          &                                         \\
+        \hspace{33pt} = $16_{10}$ \hspace{30pt}  &       &                                   \\
+        Carry                       &       \hspace{100pt}              &      \hspace{100pt}                     \\
+        \hline
+        \end{tabular}
+        
+        
+        \item
+        
+        
+        \begin{tabular}{|c|c|}
+        \hline
+        & Nombre positif\\
+        \hline    
+        1111 1010           &       0000 0101                   \\
+        \hspace{101pt}      &       + \hspace{25pt} 1           \\
+        = $-6_{10}$         &       \rule{1in}{1pt}             \\
+        \hspace{5pt}        &       0000 0110                   \\
+        \hspace{5pt}        &       4 + 2 = $6_{10}$            \\
+                            &       \hspace{100pt}              \\
+        \hline
+        \end{tabular}
+        
+        \hspace{40pt}
+        
+        \begin{tabular}{|c|c|}
+        \hline
+        & Nombre positif\\
+        \hline    
+        1111 0111                   &       0000 1000           \\
+                                    &       + \hspace{25pt} 1   \\
+        = $-9_{10}$                 &       \rule{1in}{1pt}     \\
+        \hspace{5pt}                &       0000 1001           \\
+        \hspace{100pt}              &       \hspace{100pt}      \\
+                                    &       8 + 1 = $9_{10}$    \\
+        \hline
+        \end{tabular}
+        
+        \hspace{40pt}
+        
+        \begin{tabular}{|c|c|c|}
+        \hline
+        & Nombre positif & Résultat \\
+        \hline
+        \hspace{6pt}1111 1010       &     0000 1110         &       -6 + (-9) = $-15_{10}$         \\
+        +1111 0111                  &     + \hspace{25pt} 1               &                                         \\
+        \rule{1in}{1pt}             &      \rule{1in}{1pt}            &       Correcte                          \\
+        (1)1111 0001                &     0000 1111         &                                         \\
+        \hspace{33pt} = $-15_{10}$ \hspace{30pt}  &       &                                   \\
+        Carry                       &8 + 4 + 2 + 1 = $15_{10}$&      \hspace{100pt}                     \\
+        \hline
+        \end{tabular}
+        
+        
+        
+        
+        \item
+        
+        
+        \begin{tabular}{|c|c|}
+        \hline
+        & Nombre positif\\
+        \hline    
+        1001 1101           &       0110 0010                   \\
+        \hspace{101pt}      &       + \hspace{25pt} 1           \\
+        = $-99_{10}$         &       \rule{1in}{1pt}             \\
+        \hspace{5pt}        &       0110 0011                   \\
+        \hspace{5pt}        &       64 + 32 + 2 + 1 = $99_{10}$            \\
+                            &       \hspace{100pt}              \\
+        \hline
+        \end{tabular}
+        
+        \hspace{40pt}
+        
+        \begin{tabular}{|c|c|}
+        \hline
+        &\\
+        \hline    
+        0000 0111                   &              \\
+                                    &          \\
+        4 + 2 + 1 = $7_{10}$        &           \\
+        \hspace{5pt}                &                 \\
+        \hspace{100pt}              &       \hspace{100pt}      \\
+                                    &           \\
+        \hline
+        \end{tabular}
+        
+        \hspace{40pt}
+        
+        \begin{tabular}{|c|c|c|}
+        \hline
+        & Nombre positif & Résultat \\
+        \hline
+        \hspace{6pt}1001 1101       &     0101 1011        &       -99 + 7 = $-92_{10}$         \\
+        +0000 0111                  &     + \hspace{25pt} 1      &                                         \\
+        \rule{1in}{1pt}             &     \rule{1in}{1pt}   &       Correcte                          \\
+        1010 0100                   &      0101 1100        &                                         \\
+        \hspace{33pt} = $-92_{10}$ \hspace{30pt}  &  \hspace{100pt}       &                  \\
+                                   &     64 + 16 + 8 + 4 = $92_{10}$       &      \hspace{100pt}                     \\
+        \hline
+        \end{tabular}    
+        
+        
+    \end{itemize}    
 
 \end{solution}
 
