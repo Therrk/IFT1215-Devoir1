@@ -514,14 +514,14 @@ celles pour lesquelles apparaît un débordement ou (et) une retenue(Carry).
     \end{tabular}
     Ce qui nous donne un representation binaire de $-1110.101_2$\\
 
-    On sait que le signe est negatif, l'exponent doit etre egale a 3 et la mantisse commence par 1101010000\dots\\
+    On sait que le signe est negatif, l'exponent doit être égale à 3 et la mantisse commence par 1101010000\dots\\
 
     exp = 3 = -127+128+2 = $10000010_2$
 
-    Donc la representation flotante IEEE-754 est: \\
+    Donc la représentation flotante IEEE-754 est: \\
     $1\ 10000010\ 11010100000000000000000_2$ \\\\\\
 
-    Pour la representation flotante de $8/11_{10}$, on peux calculer sa representation binaire:\\
+    Pour la representation flotante de $8/11_{10}$, on peux calculer sa représentation binaire:\\
     $8/11_{10} == 0.727272727272727272\dots_{10}$
 
     \begin{tabular}{|c|c|}
@@ -574,13 +574,13 @@ celles pour lesquelles apparaît un débordement ou (et) une retenue(Carry).
         =0 & \\
         \hline
     \end{tabular}
-    Ce qui nous donne un representation binaire de $0.101110100010111010001011101_2$\\
+    Ce qui nous donne un représentation binaire de $0.101110100010111010001011101_2$\\
 
-    On sait que le signe est positif, l'exponent doit etre egale a -1 et la mantisse est 01110100010111010001011\\
+    On sait que le signe est positif, l'exponent doit être égale à -1 et la mantisse est 01110100010111010001011\\
 
     exp = -1 = -127+64+32+16+8+4+2 = $01111110_2$
 
-    Donc la representation flotante IEEE-754 est: \\
+    Donc la représentation flotante IEEE-754 est: \\
     $0\ 01111110\ 01110100010111010001011_2$ 
 \end{solution}
 
@@ -599,28 +599,28 @@ suivantes. L’encodage utilisé est le format IEEE-754 simple précision.
     \\
     \textbf{A23BB000} = $1010 0010 0011 1011 1011 0000 0000 0000_2$ \\
     sign = 1 \\
-    exponent = 01000100 \\
+    éxponent = 01000100 \\
     mantisse = 01110111011000000000000 \\
     \\
-    exponent = $-127 + 64 + 4 = -59_{10}$ \\
+    éxponent = $-127 + 64 + 4 = -59_{10}$ \\
     \
     valeur = $- 01110111011000000000000_2 * 2^{-59}$
     \\\\
     \textbf{33DD1000} = $0011 0011 1101 1101 0001 0000 0000 0000_2$ \\
     sign = 0 \\
-    exponent = 01100111 \\
+    éxponent = 01100111 \\
     mantisse = 10111010001000000000000 \\
     \\
-    exponent = $-127 + 64 + 32 + 4 + 2 + 1 = -24_{10}$ \\
+    éxponent = $-127 + 64 + 32 + 4 + 2 + 1 = -24_{10}$ \\
     \
     valeur = $+ 10111010001000000000000_2 * 2^{-24}$
     \\\\
     \textbf{FF200000} = $1111 1111 0010 0000 0000 0000 0000 0000_2$ \\
     sign = 1 \\
-    exponent = 11111110 \\
+    éxponent = 11111110 \\
     mantisse = 01000000000000000000000 \\
     \\
-    exponent = $-127 + + 128 + 64 + 32 + 16 + 8 + 4 + 2 = 127_{10}$ \\
+    éxponent = $-127 + + 128 + 64 + 32 + 16 + 8 + 4 + 2 = 127_{10}$ \\
     mantisse = $2^{-2} = 0.25_{10}$ \\
     \
     valeur = $- 1.25_{10} * 2^{127}$
